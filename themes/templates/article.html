@@ -24,7 +24,6 @@ block content %} {% if 'ipynb' in article.source_path %}
   </div>
 </div>
 <br />
-<hr />
 {% else %}
 <h1>{{ article.title }}</h1>
 {% if article.tags|length > 0 %}
@@ -34,5 +33,4 @@ block content %} {% if 'ipynb' in article.source_path %}
   >{% if loop.index != loop.length %},{% endif %} {% endfor %}
 </p>
 {% endif %} <br />
-<hr />
 {% endif %} {{ article.content }} {% endblock %}

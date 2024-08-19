@@ -30,7 +30,7 @@
     />
 
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:300,400,700"
+      href="https://fonts.googleapis.com/css?family=Lato:400,700|Inconsolata:400,700"
       rel="stylesheet"
     />
 
@@ -48,6 +48,13 @@
       type="image/x-icon"
       href="{{ SITEURL }}/style/images/favicon.ico"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"
+      crossorigin="anonymous"
+    />
+
     <link rel="stylesheet" href="{{ SITEURL }}/style/css/iacs.css" />
 
     <title>Harvard {{ COURSE_NAME }} | {% block title %}{% endblock %}</title>
@@ -55,6 +62,10 @@
     <style>
       .navbar {
         background-color: {{ COLOR }}
+      }
+
+      .katex {
+        font: normal 1.21em KaTeX_Math, Times New Roman, serif !important;
       }
     </style>
   </head>
