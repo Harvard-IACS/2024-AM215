@@ -77,13 +77,20 @@ MARKUP = ['md', 'ipynb']
 
 PLUGIN_PATHS = ['plugins']
 
-PLUGINS = ['ipynb.markup', 'tipue_search']
+from pelican_jupyter import markup as nb_markup
+# render_math: python -m pip install pelican-katex
+PLUGINS = [nb_markup, 'tipue_search', 'pelican_katex']
+# PLUGINS = ['ipynb.markup', 'tipue_search']
 
 IGNORE_FILES = ['.#*', '.ipynb_checkpoints', 'README.md', "*.html", "__pycache__", "*.pdf", "*.pptx", ".placeholder", ".DS_Store", "*.ipynb-meta", "*.csv", "*.json", "*.txt", "*.xmls"]
 
-STATIC_PATHS = ['lectures', 'labs', 'homeworks', 'a-sections', 'sections', 'wiki', 'images', 'projects', 'slides', 'data']
+# STATIC_PATHS = ['lectures', 'labs', 'homeworks', 'a-sections', 'sections', 'wiki', 'images', 'projects', 'slides', 'data']
+STATIC_PATHS = ['lectures', 'labs', 'homeworks']
+# DIRECT_TEMPLATES = ['index', 'search', 'tags', 'category']
+DIRECT_TEMPLATES = ['index', 'search']
 
-DIRECT_TEMPLATES = ['index', 'search', 'tags', 'category']
+# Jinja2 template used to render jupyter notebooks
+IPYNB_EXPORT_TEMPLATE = 'themes/templates/nbconvert/lab/base.html.j2'
 
 import re
 
