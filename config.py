@@ -1,10 +1,10 @@
-COURSE_NAME = '2024_AM215'
+COURSE_NAME = 'AM215'
 
-AUTHOR = ''
+AUTHOR = 'Ignacio Becker Troncoso'
 
-SEMESTER = ''
+SEMESTER = 'Fall'
 
-YEAR = ''
+YEAR = '2024'
 
 SITEURL = ''
 
@@ -14,7 +14,12 @@ COLOR = '#8996A0'
 
 # Define Navbar links
 # ex. ('Link Name', 'URL')
-MENUITEMS = []
+MENUITEMS = [
+    # ('Syllabus', 'pages/syllabus.html'),
+    ('Schedule', 'pages/schedule_static.html'),
+    ('Project', 'pages/project.html'),
+    ('Resources', 'pages/resources.html'),
+]
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
