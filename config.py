@@ -67,7 +67,7 @@ AUTHOR_SAVE_AS = ''
 
 TAG_SAVE_AS = ''
 
-INDEX_SAVE_AS = 'pages/materials.html'
+INDEX_SAVE_AS = 'pages/topic_index.html'
 
 THEME_STATIC_DIR = 'style'
 
@@ -78,14 +78,18 @@ MARKUP = ['md', 'ipynb']
 PLUGIN_PATHS = ['plugins']
 
 from pelican_jupyter import markup as nb_markup
+
 # render_math: python -m pip install pelican-katex
 PLUGINS = [nb_markup, 'tipue_search', 'pelican_katex']
-# PLUGINS = ['ipynb.markup', 'tipue_search']
 
-IGNORE_FILES = ['.#*', '.ipynb_checkpoints', 'README.md', "*.html", "__pycache__", "*.pdf", "*.pptx", ".placeholder", ".DS_Store", "*.ipynb-meta", "*.csv", "*.json", "*.txt", "*.xmls"]
+IGNORE_FILES = [
+    '.#*', '.ipynb_checkpoints', 'README.md', "*.html", "__pycache__",
+    "*.pptx", ".placeholder", ".DS_Store", "*.ipynb-meta", "*.csv", "*.json",
+    "*.txt", "*.xmls", "*.aux", "*.snm", "*.toc", "*.out", "*.nav", 'HW*.md'
+]
 
-# STATIC_PATHS = ['lectures', 'labs', 'homeworks', 'a-sections', 'sections', 'wiki', 'images', 'projects', 'slides', 'data']
 STATIC_PATHS = ['lectures', 'labs', 'homeworks']
+
 # DIRECT_TEMPLATES = ['index', 'search', 'tags', 'category']
 DIRECT_TEMPLATES = ['index', 'search']
 
