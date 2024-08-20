@@ -16,9 +16,11 @@ COLOR = '#8996A0'
 # ex. ('Link Name', 'URL')
 MENUITEMS = [
     # ('Syllabus', 'pages/syllabus.html'),
-    ('Schedule', 'pages/schedule_static.html'),
-    ('Project', 'pages/project.html'),
+    # ('Schedule', 'pages/schedule_static.html'),
+     ('Tutorials', 'pages/tutorials.html'),
+    ('Projects', 'pages/projects.html'),
     ('Resources', 'pages/resources.html'),
+
 ]
 
 # Uncomment following line if you want document-relative URLs when developing
