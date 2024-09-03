@@ -8,17 +8,17 @@ Date: 2022-07-26
 * [How to Setup your Private Class Repository](#tutorial-repo)
     * [Steps to Setup Your Private Class Repository](#tutorial-repo-steps)
     * [Add an SSH Key to Your Account](#tutorial-repo-ssh)
-<!-- * [Homework Workflow](#tutorial-hw)
+ * [Homework Workflow](#tutorial-hw)
     * [Example Homework Workflow](#tutorial-hw-example)
         * [Step 1: Branch Off](#tutorial-hw-example1)
         * [Step 2: Solving the Homework](#tutorial-hw-example2)
         * [Step 3: Create a Pull Request](#tutorial-hw-example3)
             * [Creating a Web Pull Request](#tutorial-hw-example3-webpr)
-        * [Step 4: Submit on Gradescope](#tutorial-hw-example4)
-* [Pair-programming Workflow](#tutorial-pp)
+        * [Step 4: Submit on Gradescope](#tutorial-hw-example4) 
+<!-- * [Pair-programming Workflow](#tutorial-pp)
     * [Protocol](#tutorial-pp-protocol)
     * [How to launch `tmate`](#tutorial-pp-tmate)
-        * [Recommended Workflow](#tutorial-pp-tmate1) -->
+        * [Recommended Workflow](#tutorial-pp-tmate1)  -->
 
 <!-- Private Repo {{{1 -->
 ## <a id="tutorial-repo"></a><a class="anchor-link" href="#tutorial-repo">How to Setup your Private Class Repository</a>
