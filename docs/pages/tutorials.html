@@ -238,226 +238,219 @@ permissions. <strong>Never share your <em>private key</em> <code>~/.ssh/id_rsa</
 > be lost when you exit the container.  For security reasons, sensitive keys
 > like this should not be put in containers. -->
 
-<!-- 
-## <a id="tutorial-hw"></a><a class="anchor-link" href="#tutorial-hw">Homework Workflow</a>
-
-The following are the basic rules we apply for homework submissions:
-
-1. **Naming convention for homework directories:** your private repository
-   should contain one `homework` directory on the repository root with `hwX`
-   sub-directories for each homework assignment.  The `X` in `hwX` is to be
-   replaced with the assignment number.  For example `hw1`, `hw2` and so on.
-2. **Which files will be considered for grading:** within the sub-directory
-   `hwX`, place the assignment files that you want us to grade in a directory
-   called `submission`. _We will only grade data in these directories_.
-3. **Pull request (PR):** your homework assignments must be completed on `git`
-   branches called `hwX`, where `X` is again to be substituted with the
-   assignment number.  _Your homework `X` submission requires an open pull
-   request to merge the `hwX` branch into your `main` (or deprecated `master`)
-   branch for full points_ (both branches are inside your private class
-   repository in the [CS107 organization](https://code.harvard.edu/CS107)). Some
-   implications of this:
-       + Solving homework on the `main` or `master` branch is always wrong.
-       + For each homework submission you need to issue _one open_ PR.  _Merging
-         an open PR **before** the teaching staff has reviewed and graded your
-         work will make the PR disappear_.
-       + Only files inside `submission` in PR `X` will contribute to your `hwX`
-         grade (see next item).
-4. **Gradescope:** your homework will be graded on the [Gradescope
-   platform](https://canvas.harvard.edu/courses/108118/external_tools/89451?display=borderless)
+<h2><a id="tutorial-hw"></a><a class="anchor-link" href="#tutorial-hw">Homework Workflow</a></h2>
+<p>The following are the basic rules we apply for homework submissions:</p>
+<ol>
+<li><strong>Naming convention for homework directories:</strong> your private repository
+   should contain one <code>homework</code> directory on the repository root with <code>hwX</code>
+   sub-directories for each homework assignment.  The <code>X</code> in <code>hwX</code> is to be
+   replaced with the assignment number.  For example <code>hw1</code>, <code>hw2</code> and so on.</li>
+<li><strong>Which files will be considered for grading:</strong> within the sub-directory
+   <code>hwX</code>, place the assignment files that you want us to grade in a directory
+   called <code>submission</code>. <em>We will only grade data in these directories</em>.</li>
+<li><strong>Pull request (PR):</strong> your homework assignments must be completed on <code>git</code>
+   branches called <code>hwX</code>, where <code>X</code> is again to be substituted with the
+   assignment number.  <em>Your homework <code>X</code> submission requires an open pull
+   request to merge the <code>hwX</code> branch into your <code>main</code> 
+   branch for full points</em> (both branches are inside your private class
+   repository in the <a href="https://code.harvard.edu/AM215">AM215 organization</a>). Some
+   implications of this:<ul>
+<li>Solving homework on the <code>main</code> or <code>master</code> branch is always wrong.</li>
+<li>For each homework submission you need to issue <em>one open</em> PR.  <em>Merging
+     an open PR <strong>before</strong> the teaching staff has reviewed and graded your
+     work will make the PR disappear</em>.</li>
+<li>Only files inside <code>submission</code> in PR <code>X</code> will contribute to your <code>hwX</code>
+     grade (see next item).</li>
+</ul>
+</li>
+<li><strong>Gradescope:</strong> your homework will be graded on the <a href="https://canvas.harvard.edu/courses/108118/external_tools/89451?display=borderless">Gradescope
+   platform</a>
    that has been setup and linked to the class canvas page.  The platform does
    currently not support submission directly via your Git repository.  You
-   therefore have to create a `zip` archive of your `submission` directory
+   therefore have to create a <code>zip</code> archive of your <code>submission</code> directory
    created in step 2 above and upload the archive on
-   [Gradescope](https://canvas.harvard.edu/courses/108118/external_tools/89451?display=borderless).
-   It is important that you zip-up the *directory* and not individual files
-   inside.  You can use the command `zip -r submission.zip submission/`, where
-   the `-r` option means add files *recursively*, `submission.zip` is the name
-   of zip archive and `submission` is your homework submission directory from
-   step 2 containing your solution.  This assumes you are in `homework/hwX`
-   inside your Git repository.
+   <a href="https://www.gradescope.com/courses/821711">Gradescope</a>.
+   It is important that you zip-up the <em>directory</em> and not individual files
+   inside.  You can use the command <code>zip -r submission.zip submission/</code>, where
+   the <code>-r</code> option means add files <em>recursively</em>, <code>submission.zip</code> is the name
+   of zip archive and <code>submission</code> is your homework submission directory from
+   step 2 containing your solution.  This assumes you are in <code>homework/hwX</code>
+   inside your Git repository.</li>
+</ol>
+<p><em>Points will be lost if any of these requirements are violated</em>.</p>
+<blockquote>
+<p>The teaching staff will review the open PR for each homework and grade your
+work accordingly.  Grades will be released on Canvas and feedback is provided
+through the Gradescope platform.  Once you have received the grade and
+feedback, your open PR for homework <code>X</code> can be merged into your <code>main</code> branch if there are no more pending issues. 
+ After the PR is closed, you may delete the <code>hwX</code> branch in your repository.  This concludes a homework
+submission.</p>
+</blockquote>
+<h3><a id="tutorial-hw-example"></a><a class="anchor-link" href="#tutorial-hw-example">Example Homework Workflow</a></h3>
+<p>This example is intended to help you internalize the three basic rules described
+above. </p>
+<!-- _Each homework awards 10 points by performing these steps correctly._ -->
 
-_Points will be lost if any of these requirements are violated_.
-
-> The teaching staff will review the open PR for each homework and grade your
-> work accordingly.  Grades will be released on canvas and feedback is provided
-> through the Gradescope platform.  Once you have received the grade and
-> feedback, your open PR for homework `X` can be merged into your `main` or
-> `master` branch if there are no more pending issues.  After the PR is closed,
-> you may delete the `hwX` branch in your repository.  This concludes a homework
-> submission.
-
-
-### <a id="tutorial-hw-example"></a><a class="anchor-link" href="#tutorial-hw-example">Example Homework Workflow</a>
-
-This example is intended to help you internalize the three basic rules described
-above.  _Each homework awards 10 points by performing these steps correctly._
-
-> **Note:** Specific instructions provided in each homework assignment may
-> override the following basic approach.
-
-Suppose we want to work on homework assignment 3, which consists of 4 problems.
-
-#### <a id="tutorial-hw-example1"></a><a class="anchor-link" href="#tutorial-hw-example1">Step 1: Branch Off</a>
-
-The ease of _branching_ is the main strength of `git`.  Branches allow you to be
+<blockquote>
+<p><strong>Note:</strong> Specific instructions provided in each homework assignment may
+override the following basic approach.</p>
+</blockquote>
+<p>Suppose we want to work on homework assignment 3, which consists of 4 problems.</p>
+<h4><a id="tutorial-hw-example1"></a><a class="anchor-link" href="#tutorial-hw-example1">Step 1: Branch Off</a></h4>
+<p>The ease of <em>branching</em> is the main strength of <code>git</code>.  Branches allow you to be
 destructive without affecting production code or data.  The reason we solve
 homeworks on individual branches is to help you develop a feel for this
 protection and to materialize the required steps to create branches.  Branches
-_will_ provide you true comfort when working on real projects outside of this
-class.
-
-1. Make sure your `master` or `main` branch is in the state you want your new
+<em>will</em> provide you true comfort when working on real projects outside of this
+class.</p>
+<ol>
+<li>
+<p>Make sure your <code>main</code> branch is in the state you want your new
    branch to be based on.  If you need to synchronize with your default remote
-   branch you can type
+   branch you can type</p>
+<div class="highlight"><pre><span></span><code>git pull
+</code></pre></div>
 
-        git pull
+</li>
+<li>
+<p>The next step consists of creating and switching to a new branch that is
+   based off the current branch.  For this you can use</p>
+<div class="highlight"><pre><span></span><code>git checkout -b hw3
+</code></pre></div>
 
-2. The next step consists of creating and switching to a new branch that is
-   based off the current branch.  For this you can use
+<p>which is how you did it before <code>git 2.23.0</code>.  Since the <code>checkout</code> command is
+   <a href="https://github.com/git/git/blob/master/Documentation/RelNotes/2.23.0.txt#L61">ambiguous</a>, the preferred way for more recent versions of <code>git</code> is</p>
+<div class="highlight"><pre><span></span><code>git switch -c hw3
+</code></pre></div>
 
-        git checkout -b hw3
-   which is how you did it before `git 2.23.0`.  Since the `checkout` command is
-   [ambiguous](https://github.com/git/git/blob/master/Documentation/RelNotes/2.23.0.txt#L61), the preferred way for more recent versions of `git` is
-
-        git switch -c hw3
-
-You are now on a new branch called `hw3` as required.  You will need to issue a
-pull request into `main` or `master` from this branch such that your homework
+</li>
+</ol>
+<p>You are now on a new branch called <code>hw3</code> as required.  You will need to issue a
+pull request into <code>main</code> from this branch such that your homework
 will be graded.  You can create the PR now (see below) or once you are done with
-solving `hw3`, it does not matter to `git`.  (Pull requests are not something
-designed by `git` itself, but rather by platforms like GitHub or GitLab.)
-
-> **Note:** you will lose 5 points if you are not solving your `hwX` (in this
-> example it is `hw3`) on a branch named `hwX`.  You are of course free to
-> create additional branches besides `hwX` if suitable.
-
-
-#### <a id="tutorial-hw-example2"></a><a class="anchor-link" href="#tutorial-hw-example2">Step 2: Solving the Homework</a>
-
-The files the teaching staff will consider for grading have to be located in the
-directory `homework/hw3/submission`.  You are free to put other files below
-`homework/hw3` that might be useful when you revisit your work sometime later.
+solving <code>hw3</code>, it does not matter to <code>git</code>.  (Pull requests are not something
+designed by <code>git</code> itself, but rather by platforms like GitHub or GitLab.)</p>
+<blockquote>
+<p><strong>Note:</strong> you will lose 5 points if you are not solving your <code>hwX</code> (in this
+example it is <code>hw3</code>) on a branch named <code>hwX</code>.  You are of course free to
+create additional branches besides <code>hwX</code> if suitable.</p>
+</blockquote>
+<h4><a id="tutorial-hw-example2"></a><a class="anchor-link" href="#tutorial-hw-example2">Step 2: Solving the Homework</a></h4>
+<p>The files the teaching staff will consider for grading have to be located in the
+directory <code>homework/hw3/submission</code>.  You are free to put other files below
+<code>homework/hw3</code> that might be useful when you revisit your work sometime later.
 The problem sheet might be one of those files.  Class handouts are distributed
-in the `main` [class repository](https://code.harvard.edu/CS107/main).  You can
-manually create these directories and copy the files you want into your `hw3`
-directory using, for example:
+in the <code>main</code> <a href="https://code.harvard.edu/AM215/main_2024">class repository</a>.  You can
+manually create these directories and copy the files you want into your <code>hw3</code>
+directory using, for example:</p>
+<div class="highlight"><pre><span></span><code>    mkdir -p homework/hw3/submission
+    cp &lt;path to main class repo&gt;/homework/hw3/hw3.pdf homework/hw3
+</code></pre></div>
 
-        mkdir -p homework/hw3/submission
-        cp <path to main class repo>/homework/hw3/hw3.pdf homework/hw3
+<p>Alternatively you can use <code>git</code> by configuring the <code>main</code> class repository as
+another remote in your local <code>git</code> repository (see homework 1).  In this case
+you can checkout all the distributed homework files at once with</p>
+<div class="highlight"><pre><span></span><code>    git checkout class/master -- homework/hw3
+</code></pre></div>
 
-Alternatively you can use `git` by configuring the `main` class repository as
-another remote in your local `git` repository (see homework 1).  In this case
-you can checkout all the distributed homework files at once with
-
-        git checkout class/master -- homework/hw3
-
-assuming that the remote points to <https://code.harvard.edu/CS107/main> and is
-locally named "`class`".  You may need to update your refs with `git fetch --all`
-before you invoke the checkout command above.
-
-The homework sheet will state what files have to be submitted.  For this `hw3`
-we assume they are `P1.py`, `P2.py`, `P3.py` and `P4.py`, one for each of the
-four problems.
-
-> These files should run and return the required output.  They have to be
-> submitted inside the `homework/hw3/submission` directory.
-
-You should commit your work often in logical chunks.  Your commits are to be
-done on the `hw3` branch, of course.  The following are a few commands that
-might be helpful:
-
-* Use `git status` often to check your local state.
-* Use the `git add <file_name>` command to stage files you have changed for a
-  commit.
-* Use `git commit -m <commit message>` to create a commit with an appropriate
-  commit message.
-* Use `git stash` to temporarily stash modified files (similar to a commit but
-  it is not written to the history).  Later on use `git stash list` to list all
-  your stashed changes if you have used `git stash` multiple times.  You can
-  check what will change when you apply the stash with `git stash show -p` and 
-  apply the stashed changes with `git stash apply` (or
-  `git stash pop` which also *removes* the stash from the list).  Note that
-  these commands work on the first stash object in the list `stash@{0}` if you
-  do not explicitly specify the stash object you want to apply.
-* Use `git push` to push local branch/commits to your remote repository.
-* Use `git restore <file_path>` to undo changes to a single file.
-* Use `git revert <commit_SHA>` to undo the changes in a specific commit.
-
-> Make sure you have committed your solution you want to submit inside the
-> `homework/hw3/submission` directory with the required file names.
-
-
-#### <a id="tutorial-hw-example3"></a><a class="anchor-link" href="#tutorial-hw-example3">Step 3: Create a Pull Request</a>
-
-If you have local commits not pushed to the remote issue the `git push` command.
+<p>assuming that the remote points to <a href="https://code.harvard.edu/AM215/main_2024">https://code.harvard.edu/AM215/main_2024</a> and is
+locally named "<code>class</code>".  You may need to update your refs with <code>git fetch --all</code>
+before you invoke the checkout command above.</p>
+<p>The homework sheet will state what files have to be submitted.  For this <code>hw3</code>
+we assume they are <code>P1.py</code>, <code>P2.py</code>, <code>P3.py</code> and <code>P4.py</code>, one for each of the
+four problems.</p>
+<blockquote>
+<p>These files should run and return the required output.  They have to be
+submitted inside the <code>homework/hw3/submission</code> directory.</p>
+</blockquote>
+<p>You should commit your work often in logical chunks.  Your commits are to be
+done on the <code>hw3</code> branch, of course.  The following are a few commands that
+might be helpful:</p>
+<ul>
+<li>Use <code>git status</code> often to check your local state.</li>
+<li>Use the <code>git add &lt;file_name&gt;</code> command to stage files you have changed for a
+  commit.</li>
+<li>Use <code>git commit -m &lt;commit message&gt;</code> to create a commit with an appropriate
+  commit message.</li>
+<li>Use <code>git stash</code> to temporarily stash modified files (similar to a commit but
+  it is not written to the history).  Later on use <code>git stash list</code> to list all
+  your stashed changes if you have used <code>git stash</code> multiple times.  You can
+  check what will change when you apply the stash with <code>git stash show -p</code> and 
+  apply the stashed changes with <code>git stash apply</code> (or
+  <code>git stash pop</code> which also <em>removes</em> the stash from the list).  Note that
+  these commands work on the first stash object in the list <code>stash@{0}</code> if you
+  do not explicitly specify the stash object you want to apply.</li>
+<li>Use <code>git push</code> to push local branch/commits to your remote repository.</li>
+<li>Use <code>git restore &lt;file_path&gt;</code> to undo changes to a single file.</li>
+<li>Use <code>git revert &lt;commit_SHA&gt;</code> to undo the changes in a specific commit.</li>
+</ul>
+<blockquote>
+<p>Make sure you have committed your solution you want to submit inside the
+<code>homework/hw3/submission</code> directory with the required file names.</p>
+</blockquote>
+<h4><a id="tutorial-hw-example3"></a><a class="anchor-link" href="#tutorial-hw-example3">Step 3: Create a Pull Request</a></h4>
+<p>If you have local commits not pushed to the remote issue the <code>git push</code> command.
 You are now ready to issue a pull request (you could also have done this step at
-the very beginning of solving this homework, this is up to you).
-
-The goal is to merge the `hw3` branch into your `main` or `master` branch
+the very beginning of solving this homework, this is up to you).</p>
+<p>The goal is to merge the <code>hw3</code> branch into your <code>main</code> branch
 eventually.  The teaching staff must review and grade your work first, however.
-There are two ways to accomplish a PR on GitHub:
-
-1. Through the web browser at `https://code.harvard.edu/CS107/<your NetID>`.
-2. Through the GitHub [command line client](https://cli.github.com/). This
+There are two ways to accomplish a PR on GitHub:</p>
+<ol>
+<li>Through the web browser at <code>https://code.harvard.edu/AM215/&lt;your NetID&gt;</code>.</li>
+<li>Through the GitHub <a href="https://cli.github.com/">command line client</a>. This
    method is helpful if you get distracted from the context switch that is
-   associated with the first method.
+   associated with the first method.</li>
+</ol>
+<!-- > **Note:** you will lose 2 points if you do not create a PR. -->
 
-> **Note:** you will lose 2 points if you do not create a PR.
-
-**Disclaimer:** you would not typically issue a PR for projects you are the sole
+<p><strong>Disclaimer:</strong> you would not typically issue a PR for projects you are the sole
 contributor. Pull requests are typical for large projects at a company in which
 someone else will review your code before you can merge your code to the
 production branch. We want you to become accustomed to this type of workflow. It
 is a good idea to always use separate development branches. You should never
-commit straight to your `main` or `master` branches until the changes have
-thoroughly been tested.
-
-
-##### <a id="tutorial-hw-example3-webpr"></a><a class="anchor-link" href="#tutorial-hw-example3-webpr">Creating a Web Pull Request</a>
-
-1. Navigate to your `https://code.harvard.edu/CS107/<your NetID>` private class
+commit straight to your <code>main</code> or <code>master</code> branches until the changes have
+thoroughly been tested.</p>
+<h5><a id="tutorial-hw-example3-webpr"></a><a class="anchor-link" href="#tutorial-hw-example3-webpr">Creating a Web Pull Request</a></h5>
+<ol>
+<li>Navigate to your <code>https://code.harvard.edu/AM215/&lt;your NetID&gt;</code> private class
    repository and click on the "Pull Requests" tab in the top left part of the
-   window.
-2. Click on the "New pull request" button
-3. Choose your `main` or `master` branch as the _base_ (the one you want to
-   merge into) and your `hw3` branch as the one you want to _compare_ to.
-4. This should automatically reload the page and show the changes that will be
+   window.</li>
+<li>Click on the "New pull request" button</li>
+<li>Choose your <code>main</code> or <code>master</code> branch as the <em>base</em> (the one you want to
+   merge into) and your <code>hw3</code> branch as the one you want to <em>compare</em> to.</li>
+<li>This should automatically reload the page and show the changes that will be
    applied.  Click on the "Create pull request" button.
-   ![Create PR]({static}/pages/media/create_pr.png)
-5. You can optionally add comments to this pull request if you desire.  Click on
-   the "Create pull request" button once more to create and _open_ the pull
-   request.
-6. The pull request is now open.  You can even push more commits to the `hw3`
+   <img alt="Create PR" src="../pages/media/create_pr_am215.png"></li>
+<li>You can optionally add comments to this pull request if you desire.  Click on
+   the "Create pull request" button once more to create and <em>open</em> the pull
+   request.</li>
+<li>The pull request is now open.  You can even push more commits to the <code>hw3</code>
    branch if you need to correct something (before the deadline has passed of
    course).  Therefore, you could also create the PR at the beginning of the
    homework.
-   ![Open PR]({static}/pages/media/open_pr.png)
-
-> **Note:** DO NOT click on the button that says "Merge pull request" until
-> you have received your grade and feedback for that homework.  You will lose 3
-> points if you prematurely merge your PR.
-
-#### <a id="tutorial-hw-example4"></a><a class="anchor-link" href="#tutorial-hw-example4">Step 4: Submit on Gradescope</a>
-
-Your submission is now ready to be submitted for grading on
-[Gradescope](https://canvas.harvard.edu/courses/108118/external_tools/89451?display=borderless).
-Simply create a `zip` archive of your `submission` directory you have created in
-your Git repository, e.g. `submission.zip`, and upload it to Gradescope by
-following the link above. You can use the command `zip -r submission.zip
-submission/`, where the `-r` option means add files *recursively*,
-`submission.zip` is the name of zip archive and `submission` is your homework
-submission directory.
-
-Since you track the change history of your work in
-Git, you should not add `*.zip` files to your Git history.  You can simply
-ignore such archives by adding the line
-
+   <img alt="Open PR" src="../pages/media/open_pr_am215.png"></li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> DO NOT click on the button that says "Merge pull request" until
+you have received your grade and feedback for that homework.  You will lose 3
+points if you prematurely merge your PR.</p>
+</blockquote>
+<h4><a id="tutorial-hw-example4"></a><a class="anchor-link" href="#tutorial-hw-example4">Step 4: Submit on Gradescope</a></h4>
+<p>Your submission is now ready to be submitted for grading on
+<a href="https://www.gradescope.com/courses/821711">Gradescope</a>.
+Simply create a <code>zip</code> archive of your <code>submission</code> directory you have created in
+your Git repository, e.g. <code>submission.zip</code>, and upload it to Gradescope by
+following the link above. You can use the command <code>zip -r submission.zip
+submission/</code>, where the <code>-r</code> option means add files <em>recursively</em>,
+<code>submission.zip</code> is the name of zip archive and <code>submission</code> is your homework
+submission directory.</p>
+<p>Since you track the change history of your work in
+Git, you should not add <code>*.zip</code> files to your Git history.  You can simply
+ignore such archives by adding the line</p>
 <div class="highlight"><pre><span></span><code>*.zip
 </code></pre></div>
 
-
-to your `.gitignore` file in your repository root.
+<p>to your <code>.gitignore</code> file in your repository root.</p>
 <!-- 1}}} -->
 <!-- Pair-Programming {{{1 -->
 <!-- ## <a id="tutorial-pp"></a><a class="anchor-link" href="#tutorial-pp">Pair-programming Workflow</a>
