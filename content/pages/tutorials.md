@@ -62,19 +62,19 @@ to setup your new repository such that you can work with it from your laptop
 (you can skip the landing page after you have created the repository). When you
 navigate back to <https://code.harvard.edu/AM215> you should see something
 similar to this:
-<!-- TODO: Change image -->
-![AM215 organization]({static}/pages/media/cs107_org_initial.png)
+![AM215 organization]({static}/pages/media/am215_org_initial.png)
 
-* The blurred repository is your private class repository that was the focus of
-  this tutorial.
 * The `main_2024` repository is the main AM215 class repository which is used
-  to distribute all of the class material during the semester. In the first homework we will set this repository
+  to distribute all of the class material during the semester. 
+  In the first homework we will set this repository
   as an upstream such that you can conveniently unpack class material into your
   private repository.
 
 > **Note:** private repositories are only visible to you within the
 > organization.  Please do not create other repositories in the
-> <https://code.harvard.edu/AM215> organization.  You have your own user account
+> <https://code.harvard.edu/AM215> organization.  
+>
+>You have your own user account
 > on <https://code.harvard.edu/> just like you have on GitHub or other
 > providers.  Your user account requires your Harvard login credentials and is a
 > good alternative to hosts like GitHub.  Feel free to create as many
@@ -108,13 +108,12 @@ cat ~/.ssh/id_rsa.pub
 
 and copy paste the output into the "Key" field on your GitHub page.  You are now
 able to access any repositories on <https://code.harvard.edu> with corresponding
-permissions.  Never share your *private key* `~/.ssh/id_rsa` with anybody.
+permissions. **Never share your *private key* `~/.ssh/id_rsa` with anybody.**
 
-> **Note:** do not create a key in the class Docker container since the key will
+<!-- > **Note:** do not create a key in the class Docker container since the key will
 > be lost when you exit the container.  For security reasons, sensitive keys
-> like this should not be put in containers.
-<!-- 1}}} -->
-<!-- Homework {{{1 -->
+> like this should not be put in containers. -->
+
 <!-- 
 ## <a id="tutorial-hw"></a><a class="anchor-link" href="#tutorial-hw">Homework Workflow</a>
 
@@ -335,7 +334,7 @@ ignore such archives by adding the line
 to your `.gitignore` file in your repository root.
 <!-- 1}}} -->
 <!-- Pair-Programming {{{1 -->
-## <a id="tutorial-pp"></a><a class="anchor-link" href="#tutorial-pp">Pair-programming Workflow</a>
+<!-- ## <a id="tutorial-pp"></a><a class="anchor-link" href="#tutorial-pp">Pair-programming Workflow</a>
 
 Exercises performed during pair-programming sections should be put under version
 control similar to homework assignments (see the [Homework
@@ -551,4 +550,4 @@ your package manager and run `tmate` like this
 ```bash
 SHELL=/bin/zsh tmate
 ```
-1}}} -->
+1}}} --> 
